@@ -31,6 +31,7 @@ a:active { text-decoration: none; }
 /*Fix the header in place*/
 .header {
     position: fixed;
+    width: 100%;
     color: #000000;
 }
 
