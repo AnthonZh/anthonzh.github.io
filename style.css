@@ -33,6 +33,12 @@ h1 {
   background-color: black;
   text-align: right;
 }
+#invisible-one {
+  visibility: hidden;
+}
+#invisible-two {
+  visibility: hidden;
+}
 
 #stars-background {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Hubble_ultra_deep_field.jpg");
