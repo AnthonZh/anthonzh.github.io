@@ -2,6 +2,7 @@ h1 {
   color: white;
   font-size: 100px;
   padding: 20%;
+  margin-bottom: 20%
 }
 
 .background {
@@ -13,7 +14,7 @@ h1 {
   padding: 10%;
   margin-bottom: 5%;
 }
-.left-bound-text {
+#left-bound-text {
   color: white;
   padding: 1%;
   font-size: 200%;
@@ -26,7 +27,7 @@ h1 {
   margin-left: 30%;
   margin-bottom: 5%;
 }
-.right-bound-text {
+#right-bound-text {
   color: white;
   padding: 1%;
   font-size: 200%;
@@ -34,12 +35,30 @@ h1 {
   text-align: right;
 }
 #invisible-one {
-  visibility: hidden;
+  opacity: 0%;
 }
+#visible-one {
+  opacity: 100%;
+}
+
 #invisible-two {
-  visibility: hidden;
+  opacity: 0%;
+}
+#visible-two {
+  opacity: 100%
 }
 
 #stars-background {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Hubble_ultra_deep_field.jpg");
+}
+
+@keyframes appear {
+  from {opacity: 0%}
+  to {opacity: 100%}
+
+}
+
+.animated {
+  animation-name: appear;
+  animation-duration: 4s;
 }
