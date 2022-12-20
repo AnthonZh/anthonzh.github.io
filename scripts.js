@@ -1,36 +1,46 @@
-leftBoundAppeared = false;
-rightBoundAppeared = false;
+var leftBoundAppeared = false;
+var rightBoundAppeared = false;
+
+var initFirstY = document.getElementById('invisible-one').getBoundingClientRect().top + window.scrollY - (document.getElementById('invisible-one').getBoundingClientRect().height/2);
+var initSecondY = document.getElementById('invisible-two').getBoundingClientRect().top + window.scrollY - (document.getElementById('invisible-two').getBoundingClientRect().height/2);
+
 function appearLeftBound() {
-    if(!leftBoundAppeared) {
-        let leftBound = document.getElementById('invisible-one');
-        let leftBoundRect = leftBound.getBoundingClientRect();
-        let initLeftBoundY = leftBoundRect.top;
-        if(screenY = initLeftBoundY && !leftBoundAppeared) {
-            document.getElementById('invisible-one').classList.add('animated');
-            console.log('Making leftbound visible');
-            document.getElementById('invisible-one').setAttribute('id', 'visible-one');
-            console.log("Changed invisible id");
-            leftBoundAppeared = true;
-        }
+    if(window.scrollY >= initFirstY) {
+        console.log("executing left if statement")
+
+        document.getElementById('invisible-one').classList.add('animated');
+        console.log('Making leftbound visible');
+
+        document.getElementById('invisible-one').setAttribute('id', 'visible-one');
+        console.log("Changed invisible id");
+
+        leftBoundAppeared = true;
     }   
 }
+
 function appearRightBound() {
-    if(!rightBoundAppeared)
+    if(window.scrollY >= initSecondY)
     {
-        let rightBound = document.getElementsByClassName('right-bound-container');
-        let rightBoundRect = rightBound[0].getBoundingClientRect();
-        let initRightBoundY = rightBoundRect.top;
-        if(screenY = initRightBoundY && !rightBoundAppeared) {
-            document.getElementById('invisible-two').classList.add('animated');
-            console.log('Making rightBound visible');
-            document.getElementById('invisible-two').setAttribute('id', 'visible-two');
-            console.log("Changed invisible id");
-            rightBoundAppeared = true;
-        }
+        console.log("executing right if statement")
+
+        document.getElementById('invisible-two').classList.add('animated');
+        console.log('Making rightBound visible');
+
+        document.getElementById('invisible-two').setAttribute('id', 'visible-two');
+        console.log("Changed invisible id");
+
+        rightBoundAppeared = true;
     }
 }
 
+
 window.onscroll = function() {
-    appearLeftBound();
-    //appearRightBound();
+    if(leftBoundAppeared == false) {
+        appearLeftBound();
+    }
+
+    if(rightBoundAppeared == false) {
+        appearRightBound();
+    }
+    
 }
