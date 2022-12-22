@@ -6,8 +6,6 @@ var initSecondY = document.getElementById('invisible-two').getBoundingClientRect
 
 function appearLeftBound() {
     if(window.scrollY >= initFirstY) {
-        console.log("executing left if statement")
-
         document.getElementById('invisible-one').classList.add('animated');
         console.log('Making leftbound visible');
 
@@ -21,8 +19,6 @@ function appearLeftBound() {
 function appearRightBound() {
     if(window.scrollY >= initSecondY)
     {
-        console.log("executing right if statement")
-
         document.getElementById('invisible-two').classList.add('animated');
         console.log('Making rightBound visible');
 
@@ -33,14 +29,12 @@ function appearRightBound() {
     }
 }
 
-
 window.onscroll = function() {
-    if(leftBoundAppeared == false) {
+    if(!leftBoundAppeared) {
         appearLeftBound();
     }
 
-    if(rightBoundAppeared == false) {
+    if(!rightBoundAppeared) {
         appearRightBound();
     }
-    
 }
