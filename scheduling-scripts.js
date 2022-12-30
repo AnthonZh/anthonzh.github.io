@@ -1,6 +1,4 @@
-const date = new Date();
-
-function numberToMonth() {
+function numberToMonth(date) {
     switch(date.getMonth()) {
         case 0:
             return "January";
@@ -31,8 +29,19 @@ function numberToMonth() {
     }
 }
 
-let month = numberToMonth();
+function padZero(number) {
+    let pad = "" + number;
+    while(pad.length < 2) {
+        pad = " " + pad;
+    }
+    return pad;
+}
+
+const date = new Date();
+
+let month = numberToMonth(date);
 let year = date.getFullYear();
 
 document.getElementById('current-month').innerText = month + " " + year;
 
+const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
