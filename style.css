@@ -6,6 +6,7 @@ p {
 }
 img {
   filter: blur(6px);
+  filter: hue-rotate(100deg);
   opacity: 50%;
   border: 5px solid black;
 }
@@ -80,5 +81,5 @@ img {
 
 .animated {
   animation-name: appear;
-  animation-duration: 6s;
+  animation-duration: 3s;
 }
