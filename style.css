@@ -6,7 +6,7 @@ p {
 }
 img {
   filter: blur(6px);
-  filter: hue-rotate(30deg);
+  filter: hue-rotate(50deg);
   opacity: 50%;
   border: 5px solid black;
 }
