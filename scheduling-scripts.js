@@ -35,3 +35,4 @@ let month = numberToMonth();
 let year = date.getFullYear();
 
 document.getElementById('current-month').innerText = month + " " + year;
+
