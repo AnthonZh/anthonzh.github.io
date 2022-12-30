@@ -5,7 +5,8 @@ p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 img {
-  filter: blur(6px) | hue-rotate(30deg);
+  filter: blur(6px);
+  filter: hue-rotate(30deg);
   opacity: 50%;
   border: 5px solid black;
 }
