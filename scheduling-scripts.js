@@ -29,6 +29,10 @@ function numberToMonth(date) {
     }
 }
 
+function rowOne(first) {
+    
+}
+
 function padZero(number) {
     let pad = "" + number;
     while(pad.length < 2) {
@@ -45,3 +49,5 @@ let year = date.getFullYear();
 document.getElementById('current-month').innerText = month + " " + year;
 
 const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+document.getElementById('row-one').innerHTML = ;
