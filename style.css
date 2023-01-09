@@ -10,6 +10,10 @@ img {
   border: 5px solid black;
 }
 
+body {
+  width: auto;
+}
+
 .title {
   padding-bottom: 25%;
   text-align: center;
