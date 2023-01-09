@@ -1,5 +1,7 @@
 h1 {
+  font-family: "Times New Roman", Times, serif;
   color: white;
+  font-size-adjust: 0.5;
 }
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
