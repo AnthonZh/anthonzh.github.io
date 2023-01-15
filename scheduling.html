@@ -7,34 +7,46 @@
     <body>
         <h1>Scheduling</h1>
         <div id="button">
-          <button id="month">MONTH</button>
+          <p id="month"
+            onclick="
+                let monthSelection = getElementById('month-selections');
+                monthSelection.style.display = 'block'; 
+                let width = document.querySelector('#longest').offsetWidth;
+                monthSelection.style.width = width + width/4;
+                console.log(width);
+            "
+          >
+            MONTH
+        </p>
           <div id="month-selections">
-            <p>January</p>
-            <p>February</p>
-            <p>March</p>
-            <p>April</p>
-            <p>May</p>
-            <p>June</p>
-            <p>July</p>
-            <p>August</p>
-            <p>September</p>
-            <p>October</p>
-            <p>November</p>
-            <p>December</p>
+            <p class="month-option">January</p>
+            <p class="month-option">February</p>
+            <p class="month-option">March</p>
+            <p class="month-option">April</p>
+            <p class="month-option">May</p>
+            <p class="month-option">June</p>
+            <p class="month-option">July</p>
+            <p class="month-option">August</p>
+            <p class="month-option" id="longest">September</p>
+            <p class="month-option">October</p>
+            <p class="month-option">November</p>
+            <p class="month-option">December</p>
           </div>
         </div>
     </body>
-    <footer>
-                <div class="footer">
+    <div id="footer">
+        <footer>
+            <div class="footer">
+                <p style="text-align: center;">
                     <a href="#">About us</a>
-                    <p style="color: white; text-align: center;">
-                        Scheduling
-                        <a href="#">Financial Reports</a>
-                        <a href="#">About the Trip</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                    </p>
-                </div>
-    </footer>
+                    Scheduling
+                    <a href="#">Financial Reports</a>
+                    <a href="#">About the Trip</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
+    </div>
     <script src="scheduling-scripts.js"></script>
 </html>

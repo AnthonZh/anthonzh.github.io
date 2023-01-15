@@ -9,21 +9,23 @@ p {
 }
 
 #button {
-    position: relative;
-    display: inline-block;
-}
-
-#button {
-    size: 150%;
+    size: fit-content;
 }
 
 #month-selections {
     display: none;
+    justify-content: 'center';
+    background-color: lightgrey;
     position: absolute;
-    z-index: 1;
+    
 }
 
-button:hover #month-selections {
-    display: inline-block;
-    background-color: black;
+.month-option {
+    text-align: 'center';
 }
+
+#footer {
+    position: absolute;
+    justify-content: 'center';
+}
+
