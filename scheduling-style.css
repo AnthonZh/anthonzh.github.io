@@ -13,6 +13,11 @@ p {
     flex-direction: row;
 }
 
+#day-button {
+    display: none;
+
+}
+
 #button {
     size: fit-content;
 }
