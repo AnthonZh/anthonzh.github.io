@@ -2,12 +2,26 @@ let initialMonth = "Select Month";
 let initialDay = "Select Day";
 let initialYear = "Select Year";
 
-//The function to show/unshow the month selection button.
+
 document.getElementById('month').innerText = initialMonth;
 let monthShown = false;
-document.getElementById("month").onclick = show;
+document.getElementById("month").onclick = clickMonth;
 
-function show() {
+months = document.getElementsByClassName('month-option');
+for(i in months) {
+    months[i].onclick = selectMonth;
+}
+
+//Month Functions
+//The function which 'selects' a month.
+function selectMonth() {
+    var monthSelection = document.getElementById('month');
+    monthSelection.innerText = this.innerText;
+    clickMonth();
+}
+
+//The function to show/unshow the month selection button.
+function clickMonth() {
     var monthSelection = document.getElementById('month-selections');
     if(!monthShown)
     {    
@@ -26,4 +40,6 @@ function show() {
     }
 }
 
-months = document.getElementsByClassName('month-options');
+
+
+document.getElementById('day').innerText = initialDay;

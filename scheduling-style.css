@@ -8,6 +8,11 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#button-container {
+    display: flex;
+    flex-direction: row;
+}
+
 #button {
     size: fit-content;
 }
@@ -20,11 +25,12 @@ p {
     
 }
 
+#footer {
+    justify-content: 'center';
+}
+
 .month-option {
     text-align: 'center';
 }
 
-#footer {
-    justify-content: 'center';
-}
 
