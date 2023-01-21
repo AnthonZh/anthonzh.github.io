@@ -1,7 +1,7 @@
 let initialMonth = "Select Month";
 let initialDay = "Select Day";
 let initialYear = "Select Year";
-
+document.getElementById('day').style.display = 'none';
 
 document.getElementById('month').innerText = initialMonth;
 let monthShown = false;
@@ -37,6 +37,10 @@ function clickMonth() {
         monthSelection.style.display = 'none';
         monthSelection.style.width = 0;
         monthShown = !monthShown;
+    }
+    
+    if(document.getElementByID('month') != initialMonth) {
+        document.getElementById('dayButton').style.display = 'block';
     }
 }
 
