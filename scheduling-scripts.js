@@ -41,7 +41,7 @@ function clickMonth() {
         monthShown = !monthShown;
     }
     
-    if(document.getElementByID('month') != initialMonth) {
+    if(document.getElementByID('month').innerText != initialMonth) {
         document.getElementById('dayButton').style.display = 'block';
     }
 }
