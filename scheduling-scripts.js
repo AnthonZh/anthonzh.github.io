@@ -3,7 +3,7 @@ let initialDay = "Select Day";
 let initialYear = "Select Year";
 Date date = new Date();
 
-document.getElementById('day').style.display = 'none';
+document.getElementById('day-button').style.display = 'none';
 
 document.getElementById('month').innerText = initialMonth;
 let monthShown = false;
