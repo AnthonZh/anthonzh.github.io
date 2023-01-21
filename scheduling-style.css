@@ -15,8 +15,8 @@ p {
 #month-selections {
     display: none;
     justify-content: 'center';
-    background-color: lightgrey;
-    position: absolute;
+    align-items: 'center';
+    width: fit-content;
     
 }
 
@@ -25,7 +25,6 @@ p {
 }
 
 #footer {
-    position: absolute;
     justify-content: 'center';
 }
 

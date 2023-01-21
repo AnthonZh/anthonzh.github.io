@@ -6,33 +6,28 @@
     </head>
     <body>
         <h1>Scheduling</h1>
-        <div id="button">
-          <p id="month"
-            onclick="
-                let monthSelection = getElementById('month-selections');
-                monthSelection.style.display = 'block'; 
-                let width = document.querySelector('#longest').offsetWidth;
-                monthSelection.style.width = width + width/4;
-                console.log(width);
-            "
-          >
-            MONTH
-        </p>
-          <div id="month-selections">
-            <p class="month-option">January</p>
-            <p class="month-option">February</p>
-            <p class="month-option">March</p>
-            <p class="month-option">April</p>
-            <p class="month-option">May</p>
-            <p class="month-option">June</p>
-            <p class="month-option">July</p>
-            <p class="month-option">August</p>
-            <p class="month-option" id="longest">September</p>
-            <p class="month-option">October</p>
-            <p class="month-option">November</p>
-            <p class="month-option">December</p>
-          </div>
+        <div id="monthButton">
+            <h3 id="month"></h3>
+            
+            <div id="month-selections">
+                <p class="month-option">January</p>
+                <p class="month-option">February</p>
+                <p class="month-option">March</p>
+                <p class="month-option">April</p>
+                <p class="month-option">May</p>
+                <p class="month-option">June</p>
+                <p class="month-option">July</p>
+                <p class="month-option">August</p>
+                <p class="month-option" id="longest">September</p>
+                <p class="month-option">October</p>
+                <p class="month-option">November</p>
+                <p class="month-option">December</p>
+            </div>
         </div>
+
+        <div id="dayButton"></div>
+        
+        <div id="yearButton"></div>
     </body>
     <div id="footer">
         <footer>
