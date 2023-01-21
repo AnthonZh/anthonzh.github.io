@@ -15,7 +15,6 @@ p {
 
 #day-button {
     display: none;
-
 }
 
 #button {
@@ -34,8 +33,12 @@ p {
     justify-content: 'center';
 }
 
-.month-option {
-    text-align: 'center';
+#month:hover {
+    background-color: lightslategray;
+}
+
+.month-option:hover {
+    background-color: lightgrey;
 }
 
 
