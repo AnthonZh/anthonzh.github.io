@@ -53,21 +53,21 @@ document.getElementById('day-higher').onclick = changeDayButton;
 
 function changeDayButton() {
     console.log('changing day...')
-    var currDay = parseInt(document.getElementById('current-day'));
+    var currDay = parseInt(document.getElementById('current-day').innerText);
     var change = 0;
     var max = getMaxDay(document.getElementById('month').innerText);
     if(this.id == 'day-lower')
     {
-        change = 1;
+        change = -1;
     }
     else 
     {
-        change = -1;
+        change = 1;
     }
     if(currDay + change > max) {
         changeDay(0);   
     }
-    else if(currDay + change < 0) {
+    else if(currDay + change < 1) {
         changeDay(max);
     }
     else {
@@ -88,23 +88,27 @@ function getMaxDay(month) {
         case "August":
         case "October":
         case "December":
+            console.log(31);
             return 31;
             break;
         case "April":
         case "June":
         case "September":
         case "November":
+            console.log(30);
             return 30;
             break;
         case "February":
             var year = date.getFullYear();
             if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+                console.log(29);
                 return 29;
                 break;
             }
-            
+            console.log(28);
             return 28;
             break;
     }
+    
     return -1;
 }
