@@ -133,3 +133,27 @@ function openDay() {
     dayShown = !dayShown;
 }
 
+document.getElementById('year').innerText = initialYear;
+var yearShown = true;
+document.getElementById('year').onclick = showYear;
+
+var years = document.getElementsByClassName('year-option');
+for(i in years) {
+    years[i].onclick = selectYear;
+}
+
+function selectYear() {
+    document.getElementById('year').innerText = this.innerText;
+    document.getElementById('year-options').style.display = 'none';
+    yearShown = false;
+}
+
+function showYear() {
+    if(!yearShown) {
+        document.getElementById('year-options').style.display = 'block';
+    }
+    else {
+        document.getElementById('year-options').style.display = 'none';
+    }
+    yearShown = !yearShown;
+}
