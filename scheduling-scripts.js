@@ -50,6 +50,7 @@ function clickMonth() {
 document.getElementById('day').innerText = initialDay;
 document.getElementById('day-lower').onclick = changeDayButton;
 document.getElementById('day-higher').onclick = changeDayButton;
+document.getElementById('select-day').onclick = selectDay;
 
 function changeDayButton() {
     console.log('changing day...')
@@ -111,4 +112,8 @@ function getMaxDay(month) {
     }
     
     return -1;
+}
+
+function selectDay() {
+    
 }
