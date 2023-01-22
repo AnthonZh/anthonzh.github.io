@@ -6,14 +6,22 @@ h1 {
 
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: 'center';
 }
 
-#button-container {
-    display: flex;
-    flex-direction: row;
+html {
+    width: auto;
+}
+
+h3 {
+    text-align: center;
 }
 
 #day-button {
+    display: none;
+}
+
+#year-button {
     display: none;
 }
 

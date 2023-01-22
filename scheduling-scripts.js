@@ -3,7 +3,7 @@ let initialDay = "Select Day";
 let initialYear = "Select Year";
 date = new Date();
 
-document.getElementById('month').innerText = initialMonth;
+document.getElementById('month').innerText = initialMonth + "       ";
 let monthShown = false;
 document.getElementById("month").onclick = clickMonth;
 
@@ -45,12 +45,13 @@ function clickMonth() {
     }
 }
 
-
-
 document.getElementById('day').innerText = initialDay;
 document.getElementById('day-lower').onclick = changeDayButton;
 document.getElementById('day-higher').onclick = changeDayButton;
 document.getElementById('select-day').onclick = selectDay;
+document.getElementById('day').onclick = openDay;
+
+var dayShown = true;
 
 function changeDayButton() {
     console.log('changing day...')
@@ -115,5 +116,20 @@ function getMaxDay(month) {
 }
 
 function selectDay() {
-    
+    dayButton = document.getElementById('day')
+    dayButton.innerText = document.getElementById('current-day').innerText;
+    document.getElementById('select-day-button').style.display = 'none';
+    document.getElementById('year-button').style.display = 'block';
 }
+
+function openDay() {
+    var container = document.getElementById('select-day-button')
+    if(!dayShown) {
+        container.style.display = 'block';
+    }
+    else {
+        container.style.display = 'none';
+    }
+    dayShown = !dayShown;
+}
+
