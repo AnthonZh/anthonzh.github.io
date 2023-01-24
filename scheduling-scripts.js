@@ -146,6 +146,10 @@ function selectYear() {
     document.getElementById('year').innerText = this.innerText;
     document.getElementById('year-options').style.display = 'none';
     yearShown = false;
+
+    if (document.getElementById('year') != initialYear) {
+        document.getElementById('training').style.display = 'block';
+    }
 }
 
 function showYear() {
