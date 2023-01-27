@@ -76,6 +76,7 @@ body {
 
 #stars-background {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Hubble_ultra_deep_field.jpg");
+  background-blend-mode: screen;
 }
 
 @keyframes appear {
