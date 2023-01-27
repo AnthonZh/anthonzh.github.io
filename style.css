@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 h1 {
   font-family: "Times New Roman", Times, serif;
   color: white;
@@ -14,6 +16,33 @@ img {
 
 body {
   width: auto;
+}
+
+footer {
+  font-family: 'Raleway', sans-serif;
+  ;
+  color: #bbb4d6;
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+a {
+  font-size: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+a:link {
+color:#7460da;
+}
+
+a:visited {
+color:#5a4fc3;
+}
+
+a:hover {
+  color:#CAC4CE;
 }
 
 .title {
