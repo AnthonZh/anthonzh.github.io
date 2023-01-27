@@ -1,4 +1,36 @@
+body {
+    background-color: black;
+}
+
 h1 {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/6/66/Moon_and_clouds%2C_2021-11-18%2C_01.jpg") no-repeat center;
+    background-size: cover;
+}
+
+h2, h3, p {
+    color: white;
+}
+
+#vehicles {
+    position: relative;
+    background-image: url();
+}
+
+#moon, #gas-giants {
+    text-align: center;
+    padding-right: 50%;
+}
+
+#moon-info {
+    display: none;
+}
+
+#mars, #kuiper-belt {
+    text-align: center;
+    padding-left: 50%;
 }
