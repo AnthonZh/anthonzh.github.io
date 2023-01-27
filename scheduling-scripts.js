@@ -25,7 +25,12 @@ function clickMonth() {
     var monthSelection = document.getElementById('month-selections');
     if(!monthShown)
     {    
-        monthSelection.style.display = 'block'; 
+        monthSelection.style.display = 'block';
+        monthSelection.style.margin = 'auto';
+        monthSelection.style.textAlign = 'center';
+        monthSelection.style.justifyContent = 'center';
+        monthSelection.style.alignItems = 'center';
+        monthSelection.style.width = 'fit-content';
 
         let width = document.querySelector('#longest').offsetWidth;
         monthSelection.style.width = width + width/4;
@@ -41,6 +46,7 @@ function clickMonth() {
     
     if(document.getElementById('month').innerText != initialMonth) {
         console.log('displaying day...')
+        changeDay(1);
         document.getElementById('day-button').style.display = 'block';
     }
 }
@@ -67,7 +73,7 @@ function changeDayButton() {
         change = 1;
     }
     if(currDay + change > max) {
-        changeDay(0);   
+        changeDay(1);   
     }
     else if(currDay + change < 1) {
         changeDay(max);
