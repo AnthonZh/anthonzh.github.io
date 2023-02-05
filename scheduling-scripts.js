@@ -154,7 +154,7 @@ function selectYear() {
     yearShown = false;
 
     if (document.getElementById('year') != initialYear) {
-        document.getElementById('training').style.display = 'block';
+        document.getElementById('select').style.display = 'block';
     }
 }
 
@@ -166,4 +166,14 @@ function showYear() {
         document.getElementById('year-options').style.display = 'none';
     }
     yearShown = !yearShown;
+}
+
+var selectButton = document.getElementById('select-button');
+selectButton.onclick = select;
+
+function select() {
+    let confirmed = confirm("Scheduling for " + document.getElementById('day').innerText + " " + document.getElementById('month').innerText + ", "  + document.getElementById('year').innerText)
+    if(confirmed) {
+        document.getElementById('training').style.display = 'block';
+    } 
 }

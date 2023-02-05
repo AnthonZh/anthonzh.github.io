@@ -27,16 +27,8 @@ body {
 }
 
 #background {
-  background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed;
-  background-size: cover;  
-}
-
-#background::before {
-}
-
-#background-two {
   background: url("nightsky.jpg") no-repeat center fixed;
-  background-size: cover;
+  background-size: cover;  
 }
 
 footer {
@@ -128,26 +120,4 @@ a:hover {
 .animated {
   animation-name: appear;
   animation-duration: 3s;
-}
-
-@keyframes changeBackground {
-  from {background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed; background-size: cover;}
-  15% {opacity: 66%}
-  30% (opacity: 33%)
-  45% {opacity: 0%}
-  60% {opacity: 0%}
-  75% {opacity: 33%}
-  90% {opacity: 66%}
-  to {background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed; background-size: cover;}
-}
-
-.forward-background {
-  animation-name: changeBackground;
-  animation-duration: 3s;
-}
-
-.backwards-background {
-  animation-name: changeBackground;
-  animation-duration: 3s;
-  animation-direction: reverse;
 }
