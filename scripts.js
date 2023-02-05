@@ -4,6 +4,8 @@ var rightBoundAppeared = false;
 var initFirstY = document.getElementById('invisible-one').getBoundingClientRect().top + window.scrollY - (document.getElementById('invisible-one').getBoundingClientRect().height/2);
 var initSecondY = document.getElementById('invisible-two').getBoundingClientRect().top + window.scrollY - (document.getElementById('invisible-two').getBoundingClientRect().height/2);
 
+var body = document.getElementsByTagName('body')[0];
+
 function appearLeftBound() {
     if(window.scrollY >= initFirstY) {
         document.getElementById('invisible-one').classList.add('animated');
@@ -26,6 +28,16 @@ function appearRightBound() {
         console.log("Changed invisible id");
 
         rightBoundAppeared = true;
+    }
+}
+
+function changeBackground() {
+    if(window.scrollY >= document.getElementById('title-container').getBoundingClientRect().height) {
+        if(body.getAttribute('id') == 'background') {
+            body.setAttribute('class', 'forward-background');
+            body.setAttribute('id', 'background-two');
+            console.log("doing something")
+        }
     }
 }
 

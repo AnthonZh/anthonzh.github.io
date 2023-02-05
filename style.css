@@ -11,8 +11,11 @@ h1 {
   font-family: "Times New Roman", Times, serif;
   color: white;
   font-size-adjust: 0.3;
-  font-size: 200%;
+  font-size: 300%;
   text-align: center;
+  background-color: rgba(0, 0, 0, .7);
+  padding: 2.5%;
+  margin-top: -1.5%;
 }
 
 p {
@@ -20,9 +23,20 @@ p {
 }
 
 body {
-  width: 100%;
+  width: auto;
+}
+
+#background {
   background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed;
-  background-size: contain;
+  background-size: cover;  
+}
+
+#background::before {
+}
+
+#background-two {
+  background: url("nightsky.jpg") no-repeat center fixed;
+  background-size: cover;
 }
 
 footer {
@@ -114,4 +128,26 @@ a:hover {
 .animated {
   animation-name: appear;
   animation-duration: 3s;
+}
+
+@keyframes changeBackground {
+  from {background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed; background-size: cover;}
+  15% {opacity: 66%}
+  30% (opacity: 33%)
+  45% {opacity: 0%}
+  60% {opacity: 0%}
+  75% {opacity: 33%}
+  90% {opacity: 66%}
+  to {background: url("NGC_4414_(NASA-med).jpg") no-repeat center fixed; background-size: cover;}
+}
+
+.forward-background {
+  animation-name: changeBackground;
+  animation-duration: 3s;
+}
+
+.backwards-background {
+  animation-name: changeBackground;
+  animation-duration: 3s;
+  animation-direction: reverse;
 }
