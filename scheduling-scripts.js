@@ -45,7 +45,6 @@ function clickMonth() {
     }
     
     if(document.getElementById('month').innerText != initialMonth) {
-        console.log('displaying day...')
         changeDay(1);
         document.getElementById('day-button').style.display = 'block';
     }
@@ -60,7 +59,6 @@ document.getElementById('day').onclick = openDay;
 var dayShown = true;
 
 function changeDayButton() {
-    console.log('changing day...')
     var currDay = parseInt(document.getElementById('current-day').innerText);
     var change = 0;
     var max = getMaxDay(document.getElementById('month').innerText);
@@ -96,24 +94,20 @@ function getMaxDay(month) {
         case "August":
         case "October":
         case "December":
-            console.log(31);
             return 31;
             break;
         case "April":
         case "June":
         case "September":
         case "November":
-            console.log(30);
             return 30;
             break;
         case "February":
             var year = date.getFullYear();
             if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-                console.log(29);
                 return 29;
                 break;
             }
-            console.log(28);
             return 28;
             break;
     }
@@ -172,8 +166,20 @@ var selectButton = document.getElementById('select-button');
 selectButton.onclick = select;
 
 function select() {
+    if(!(available())) {
+        alert("Please select a valid date; this date is unavailable.");
+        return;
+    }
     let confirmed = confirm("Scheduling for " + document.getElementById('day').innerText + " " + document.getElementById('month').innerText + ", "  + document.getElementById('year').innerText)
     if(confirmed) {
         document.getElementById('training').style.display = 'block';
     } 
+}
+
+function available() {
+    var selectedDate = new Date(document.getElementById('month').innerText + " " + document.getElementById('day').innerText + ", " + document.getElementById('year').innerText + " 00:00:00");
+    if(selectedDate.getTime() <= date.getTime()) {
+        return false;
+    }
+    return true;
 }

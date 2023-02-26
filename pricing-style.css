@@ -16,6 +16,11 @@ h2, h3, p {
     color: white;
 }
 
+h2, h2 {
+    font-weight: bold;
+    font-size: 150%;
+}
+
 #vehicles {
     position: relative;
     background-image: url();

@@ -4,7 +4,6 @@ h1 {
     font-size-adjust: 0.3;
     font-size: 300%;
     text-align: center;
-    background-color: rgba(0, 0, 0, .7);
     padding: 2.5%;
     margin-top: -1.5%;
 }
@@ -88,7 +87,7 @@ a:hover {
     color:#CAC4CE;
 }
 
-#month:hover {
+#month:hover, #day:hover, #year:hover {
     background-color: lightslategray;
 }
 
