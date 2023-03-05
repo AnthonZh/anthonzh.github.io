@@ -5,12 +5,28 @@ var marsContainer = document.getElementById('mars');
 var gasContainer = document.getElementById('gas-giants');
 var kuiperContainer = document.getElementById('kuiper-belt');
 
-document.getElementById('moon-button').onclick = displayMoonInfo;
+moonContainer.onclick = () => {moonAppear()};
 
-function displayMoonInfo() {
-    var moonInfo = document.getElementById('moon-info');
+function moonAppear() {
+    let moonInfo = document.getElementById('moon-info');
     if(!moonInfoShown) {
+        moonInfo.classList.remove('disappear');
+        moonInfo.classList.add('appear'); 
+
         moonInfo.style.display = 'block';
+        moonInfo.style.opacity = '1';
+
         moonInfoShown = !moonInfoShown;
     }
+    else {
+        moonInfo.classList.remove('appear');
+        moonInfo.classList.add('disappear');
+        
+        setTimeout(() => {
+            moonInfo.style.display = 'none';
+            moonInfo.style.opacity = '0';
+            moonInfoShown = !moonInfoShown;
+        }, 125)   
+    }
+    
 }

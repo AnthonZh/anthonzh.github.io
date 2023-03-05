@@ -18,24 +18,72 @@ h2, h3, p {
 
 h2, h2 {
     font-weight: bold;
+    font-size: 200%;
+}
+
+p {
     font-size: 150%;
+}
+
+.black-text {
+    color: black;
 }
 
 #vehicles {
     position: relative;
-    background-image: url();
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-#moon, #gas-giants {
+.package {
+    margin: 2.5%;
     text-align: center;
-    padding-right: 50%;
+}
+
+.package:hover {
+    background-color: rgba(110, 71, 71, 0.75);
+}
+
+
+
+.info {
+    display: none;
+    position: fixed;
+    width: 50%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-container {
+    text-align: center;
+    width: 50%;
+    margin-left: 22.5%;
+    padding: 2.5%;
+    background-color: rgba(158, 158, 158, 0.75);
 }
 
 #moon-info {
-    display: none;
+    padding: 10%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg") no-repeat center;
+    background-size: cover;
 }
 
-#mars, #kuiper-belt {
-    text-align: center;
-    padding-left: 50%;
+@keyframes appear {
+    from {display: none; opacity: 0}
+    to {display: block; opacity: 1}
+}
+
+.appear {
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+.disappear {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-direction: reverse;
 }
