@@ -1,32 +1,69 @@
-var moonInfoShown = false;
+const appeared = {
+    "moon": false,
+    "mars": false,
+    "gas": false,
+    "kuiper": false,
+};
+
+const ids = {
+    "moon": 'moon-info',
+    "mars": 'mars-info',
+    "gas": 'gas-info',
+    "kuiper": 'kuiper-info',
+};
 
 var moonContainer = document.getElementById('moon');
 var marsContainer = document.getElementById('mars');
 var gasContainer = document.getElementById('gas-giants');
 var kuiperContainer = document.getElementById('kuiper-belt');
 
-moonContainer.onclick = () => {moonAppear()};
+moonContainer.onclick = () => {
+    if(appeared['moon'] == false) disappearAllButId(ids['moon']); 
+    appeared['moon'] = appear(ids['moon'], appeared['moon']); 
+};
 
-function moonAppear() {
-    let moonInfo = document.getElementById('moon-info');
-    if(!moonInfoShown) {
-        moonInfo.classList.remove('disappear');
-        moonInfo.classList.add('appear'); 
+marsContainer.onclick = () => {
+    if(appeared['mars'] == false) disappearAllButId(ids['mars']); 
+    appeared['mars'] = appear(ids['mars'], appeared['mars']); 
+};
 
-        moonInfo.style.display = 'block';
-        moonInfo.style.opacity = '1';
+gasContainer.onclick = () => {
+    if(appeared['gas'] == false) disappearAllButId(ids['gas']); 
+    appeared['gas'] = appear(ids['gas'], appeared['gas']); 
+};
 
-        moonInfoShown = !moonInfoShown;
+kuiperContainer.onclick = () => {
+    if(appeared['kuiper'] == false) disappearAllButId(ids['kuiper']); 
+    appeared['kuiper'] = appear(ids['kuiper'], appeared['kuiper']); 
+};
+
+function appear(id, appeared) {
+    let info = document.getElementById(id);
+
+    if(!appeared) {
+        info.classList.remove('disappear');
+        info.classList.add('appear'); 
+
+        info.style.display = 'block';
+        info.style.opacity = '1';
     }
     else {
-        moonInfo.classList.remove('appear');
-        moonInfo.classList.add('disappear');
+        info.classList.remove('appear');
+        info.classList.add('disappear');
         
         setTimeout(() => {
-            moonInfo.style.display = 'none';
-            moonInfo.style.opacity = '0';
-            moonInfoShown = !moonInfoShown;
-        }, 125)   
+            info.style.display = 'none';
+            info.style.opacity = '0';
+        }, 1000);
     }
-    
+    return !appeared
+}
+
+function disappearAllButId(id) {
+    for(const key in appeared) {
+        if(key == id) continue;
+        if(appeared[key] == true) {
+            appeared[key] = appear(ids[key], appeared[key]);
+        }
+    }
 }

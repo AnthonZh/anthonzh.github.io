@@ -77,13 +77,18 @@ p {
     to {display: block; opacity: 1}
 }
 
+@keyframes disappear {
+    from {display: block; opacity: 1}
+    to {display: none; opacity: 0}
+    
+}
+
 .appear {
     animation-name: appear;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .disappear {
-    animation-name: appear;
+    animation-name: disappear;
     animation-duration: 1s;
-    animation-direction: reverse;
 }
