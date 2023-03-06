@@ -72,6 +72,24 @@ p {
     background-size: cover;
 }
 
+#mars-info {
+    padding: 10%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/0/0e/Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_%2830055660701%29.png") no-repeat center;
+    background-size: cover;
+}
+
+#gas-info {
+    padding: 10%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/c/c1/Saturn_-_April_25_2016_%2837612580000%29.png") no-repeat center;
+    background-size: cover;
+}
+
+#kuiper-info {
+    padding: 10%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/0/04/Hubble_Witnesses_Massive_Comet-Like_Object_Pollute_Atmosphere_of_a_White_Dwarf_%2831975852484%29.png") no-repeat center;
+    background-size: cover;
+}
+
 @keyframes appear {
     from {display: none; opacity: 0}
     to {display: block; opacity: 1}
