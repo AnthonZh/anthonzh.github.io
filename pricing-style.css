@@ -46,8 +46,6 @@ p {
     background-color: rgba(110, 71, 71, 0.75);
 }
 
-
-
 .info {
     display: none;
     position: fixed;
@@ -88,6 +86,12 @@ p {
     padding: 10%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/0/04/Hubble_Witnesses_Massive_Comet-Like_Object_Pollute_Atmosphere_of_a_White_Dwarf_%2831975852484%29.png") no-repeat center;
     background-size: cover;
+}
+
+.x-button {
+    position: absolute;
+    top: -2.5%; 
+    left: .5%;
 }
 
 @keyframes appear {
