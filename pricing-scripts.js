@@ -64,7 +64,7 @@ function appear(id, appeared) {
         setTimeout(() => {
             info.style.display = 'none';
             info.style.opacity = '0';
-        }, 1000);
+        }, 950);
     }
     
 }

@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
+nav {
+  width: 90vw;
+  height: 5vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  margin-top: 1vh;
+  border-radius: 1;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 2;
+  background-color: #140025;
+}
+
+.nav-button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: .5vh;
+  text-decoration: none;
+}
+
+a.current-page {
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: rgb(75, 27, 75);
+}
+
+
+
 #title-container {
   height: 100vh;
   display: flex;
@@ -43,23 +83,6 @@ footer {
   border-width: 2px;
   border-color: #6758AA;
   
-}
-
-a {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-a:link {
-color:#7460da;
-}
-
-a:visited {
-color:#5a4fc3;
-}
-
-a:hover {
-  color:#CAC4CE;
 }
 
 .background {

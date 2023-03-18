@@ -5,91 +5,97 @@
         <link rel="stylesheet" href="scheduling-style.css">
     </head>
     <body id="background">
-        <h1>Scheduling</h1>
-        <div id = 'button-container'>
-            <div id="month-button">
-                <h3 id="month"></h3>
-                
-                <div id="month-selections">
-                    <p class="month-option">January</p>
-                    <p class="month-option">February</p>
-                    <p class="month-option">March</p>
-                    <p class="month-option">April</p>
-                    <p class="month-option">May</p>
-                    <p class="month-option">June</p>
-                    <p class="month-option">July</p>
-                    <p class="month-option">August</p>
-                    <p class="month-option" id="longest">September</p>
-                    <p class="month-option">October</p>
-                    <p class="month-option">November</p>
-                    <p class="month-option">December</p>
+        <nav>
+            <div id="About Us" class="nav-button">
+                <a href="index.html">About Us</a>
+            </div>
+            <div id="Pricing" class="nav-button">
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div id="Scheduling" class="nav-button">
+                <a href="scheduling.html" class="current-page">Scheduling</a>
+            </div>
+            <div id="The Trip" class="nav-button">
+                <a href="trip.html">The Trip</a>
+            </div>
+            <div id="Sources" class="nav-button">
+                <a href="sources.html">Sources</a>
+            </div>
+        </nav>
+        <div id="not-nav">
+            <h1>Scheduling</h1>
+            <div id = 'button-container'>
+                <div id="month-button">
+                    <h3 id="month"></h3>
+                    
+                    <div id="month-selections">
+                        <p class="month-option">January</p>
+                        <p class="month-option">February</p>
+                        <p class="month-option">March</p>
+                        <p class="month-option">April</p>
+                        <p class="month-option">May</p>
+                        <p class="month-option">June</p>
+                        <p class="month-option">July</p>
+                        <p class="month-option">August</p>
+                        <p class="month-option" id="longest">September</p>
+                        <p class="month-option">October</p>
+                        <p class="month-option">November</p>
+                        <p class="month-option">December</p>
+                    </div>
+                </div>
+
+                <div id="day-button">
+                    <h3 id="day"></h3>
+                    <div id="select-day-button">
+                        <p>
+                            <span id='day-lower'>&lt</span>
+                            
+                            <span id='current-day'>1</span>
+                            
+                            <span id='day-higher'>&gt</span>
+                        </p>
+                        <p id="select-day">
+                            Select
+                        </p>
+                    </div>
+                </div>
+
+                <div id="year-button">
+                    <h3 id = "year"></h3>
+                    <p id="year-options">
+                        <span class="year-option">2023</span>
+                        <span class="year-option">2024</span>
+                        <span class="year-option">2025</span>
+                        <span class="year-option">2026</span>
+                    </p>
                 </div>
             </div>
 
-            <div id="day-button">
-                <h3 id="day"></h3>
-                <div id="select-day-button">
-                    <p>
-                        <span id='day-lower'>&lt</span>
-                        
-                        <span id='current-day'>1</span>
-                        
-                        <span id='day-higher'>&gt</span>
-                    </p>
-                    <p id="select-day">
-                        Select
-                    </p>
-                </div>
+            <div id="select">
+                <h3 id="select-button">SELECT</h3>
             </div>
 
-            <div id="year-button">
-                <h3 id = "year"></h3>
-                <p id="year-options">
-                    <span class="year-option">2023</span>
-                    <span class="year-option">2024</span>
-                    <span class="year-option">2025</span>
-                    <span class="year-option">2026</span>
+            <div id='training'>
+                <h3>
+                    Training
+                </h3>
+
+                <p>
+                    We offer extensive training programs to ensure that you can experience a safe yet exciting journey! We typically plan the training 2-4 weeks before your flight.
                 </p>
-            </div>
-        </div>
+                <p>
+                    There are training sites throughout the country, so pick one at your convenience!   
+                </p>
+                <p>
+                    The cost of training is built in with your flight option.
+                </p>
 
-        <div id="select">
-            <h3 id="select-button">SELECT</h3>
-        </div>
-
-        <div id='training'>
-            <h3>
-                Training
-            </h3>
-
-            <p>
-                We offer extensive training programs to ensure that you can experience a safe yet exciting journey! We typically plan the training 2-4 weeks before your flight.
-            </p>
-            <p>
-                There are training sites throughout the country, so pick one at your convenience!   
-            </p>
-            <p>
-                The cost of training is built in with your flight option.
-            </p>
-
-            <div id="training-select">
-                
+                <div id="training-select">
+                    
+                </div>
             </div>
         </div>
     </body>
-    
-    <footer>
-        <div class="footer">
-            <footer style="text-align: center;">
-                <a href="index.html">ABOUT US</a>
-                Scheduling
-                <a href="#">FINANCIAL REPORTS</a>
-                <a href="#">ABOUT THE TRIP</a>
-                <a href="#">PRIVACY POLICY</a>
-                <a href="#">TERMS OF SERVICE</a>
-            </footer>
-        </div>
-    </footer>
     
     <script src="scheduling-scripts.js"></script>
 </html>
