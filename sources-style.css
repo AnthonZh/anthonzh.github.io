@@ -37,17 +37,26 @@ a:hover {
   background-color: rgb(75, 27, 75);
 }
 
+#container {
+    display: flex;
+    flex: 1;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* https://www.defense.gov/News/Feature-Stories/story/Article/2921461/space-force-delivers-multiple-satellites-into-orbit/ */
 body {
     display: flex;
     flex: 1;
-    background-color: black;
+    background: url("https://media.defense.gov/2022/Feb/03/2002932250/1280/1280/0/220118-F-KD758-180.JPG") no-repeat center fixed;
+    background-size: cover;
 }
 
 #body {
     display: flex;
-    margin-top: 6vh;
+    margin-top: 5vh;
     flex: 1;
     flex-direction: column;
+    margin: 1vh;
 }
 
 #top {
