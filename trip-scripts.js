@@ -31,16 +31,6 @@ function appearRightBound() {
     }
 }
 
-function changeBackground() {
-    if(window.scrollY >= document.getElementById('title-container').getBoundingClientRect().height) {
-        if(body.getAttribute('id') == 'background') {
-            body.setAttribute('class', 'forward-background');
-            body.setAttribute('id', 'background-two');
-            console.log("doing something")
-        }
-    }
-}
-
 window.onscroll = function() {
     if(!leftBoundAppeared) {
         appearLeftBound();
