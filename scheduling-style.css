@@ -71,7 +71,7 @@ body {
 }
 
 #background {
-    background: url("nightsky.jpg") no-repeat center fixed;
+    background: url("https://cdn.pixabay.com/photo/2016/11/21/12/39/stars-1845140_1280.jpg") no-repeat center fixed;
     background-size: cover;  
 }
 
