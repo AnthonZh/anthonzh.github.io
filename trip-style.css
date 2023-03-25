@@ -33,6 +33,11 @@ a.current-page {
   font-weight: bold;
 }
 
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
 a:hover {
   background-color: rgb(75, 27, 75);
 }
