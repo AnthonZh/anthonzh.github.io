@@ -33,9 +33,17 @@ a.current-page {
   font-weight: bold;
 }
 
-p {
+body {
+  
+}
+
+p, h1, h2, h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
+}
+
+h1, h2, h3 {
+  text-align: center;
 }
 
 a:hover {
@@ -57,4 +65,62 @@ body {
 #trip {
   color: white;
   background-color: rgba(0, 0, 0, .2);
+}
+
+.left-bound-container {
+  width: 50%;
+  padding: 10%;
+  margin-bottom: 25%;
+}
+
+#left-bound-text {
+  color: white;
+  padding: 1%;
+  font-size: 200%;
+  background-color: black;
+}
+
+.right-bound-container {
+  width: 50%;
+  padding: 10%;
+  margin-left: 30%;
+  margin-bottom: 25%;
+}
+
+#right-bound-text {
+  color: white;
+  padding: 1%;
+  font-size: 200%;
+  background-color: black;
+  text-align: right;
+}
+
+#invisible-one {
+  opacity: 0%;
+}
+#visible-one {
+  opacity: 100%;
+}
+
+#invisible-two {
+  opacity: 0%;
+}
+#visible-two {
+  opacity: 100%
+}
+
+#stars-background {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/23/15/23/cosmos-1853491_1280.jpg");
+  background-blend-mode: screen;
+}
+
+@keyframes appear {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+
+}
+
+.animated {
+  animation-name: appear;
+  animation-duration: 3s;
 }
