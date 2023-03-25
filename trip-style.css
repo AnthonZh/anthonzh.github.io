@@ -76,7 +76,7 @@ body {
 #left-bound-text {
   color: white;
   padding: 1%;
-  font-size: 200%;
+  font-size: 150%;
   background-color: black;
 }
 
@@ -90,7 +90,7 @@ body {
 #right-bound-text {
   color: white;
   padding: 1%;
-  font-size: 200%;
+  font-size: 150%;
   background-color: black;
   text-align: right;
 }
