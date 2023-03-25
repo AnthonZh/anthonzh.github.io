@@ -100,14 +100,6 @@ h3 {
     width: fit-content;
 }
 
-#month:hover, #day:hover, #year:hover {
-    background-color: lightslategray;
-}
-
-.month-option:hover {
-    background-color: gray;
-}
-
 #training {
     display: none;
     margin: auto;
