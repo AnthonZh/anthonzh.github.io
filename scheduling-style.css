@@ -57,9 +57,14 @@ h3 {
     color: white;
 }
 
-p {
+p, li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+}
+
+ul {
+    text-align: center;
+    align-self: center;
 }
 
 body {

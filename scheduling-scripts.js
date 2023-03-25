@@ -183,3 +183,23 @@ function available() {
     }
     return true;
 }
+
+function selectTraining(text) {
+    let confirmed = confirm("Scheduling a training in " + text.innerText);
+    if(confirmed) {
+        window.location.href="trip.html";
+    }
+}
+
+trainingLocations = document.getElementsByClassName('training-location');
+
+trainingLocations[0].onclick = () => {selectTraining(trainingLocations[0])};
+trainingLocations[1].onclick = () => {selectTraining(trainingLocations[1])};
+trainingLocations[2].onclick = () => {selectTraining(trainingLocations[2])};
+trainingLocations[3].onclick = () => {selectTraining(trainingLocations[3])};
+trainingLocations[4].onclick = () => {selectTraining(trainingLocations[4])};
+trainingLocations[5].onclick = () => {selectTraining(trainingLocations[5])};
+trainingLocations[6].onclick = () => {selectTraining(trainingLocations[6])};
+trainingLocations[7].onclick = () => {selectTraining(trainingLocations[7])};
+trainingLocations[8].onclick = () => {selectTraining(trainingLocations[8])};
+trainingLocations[9].onclick = () => {selectTraining(trainingLocations[9])};
