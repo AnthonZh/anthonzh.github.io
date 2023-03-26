@@ -67,7 +67,7 @@ body {
 }
 
 #background {
-  background: url("nightsky.jpg") no-repeat center fixed;
+  background: url("https://cdn.pixabay.com/photo/2019/08/04/06/04/night-sky-4383118_960_720.jpg") no-repeat center fixed;
   background-size: cover;  
 }
 
