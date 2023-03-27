@@ -48,7 +48,7 @@ a:hover {
 }
 
 h1 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
   font-size-adjust: 0.3;
   font-size: 300%;
@@ -84,7 +84,7 @@ body {
   color: white;
   padding: 1%;
   font-size: 200%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .right-bound-container {
@@ -97,7 +97,7 @@ body {
   color: white;
   padding: 1%;
   font-size: 200%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: right;
 }
 
@@ -116,8 +116,10 @@ body {
 }
 
 #stars-background {
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/18/22/58/stars-1837306_1280.jpg");
+  background-image: url("sky-new.jpg");
   background-blend-mode: screen;
+  border: black;
+  border-width: 1px;
 }
 
 @keyframes appear {

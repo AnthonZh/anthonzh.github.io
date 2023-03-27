@@ -26,7 +26,8 @@ a#nav {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: .5vh;
   text-decoration: none;
-  text-align: center;
+  text-align: center;  
+  font-size: 100%;
 }
 
 a.current-page {
