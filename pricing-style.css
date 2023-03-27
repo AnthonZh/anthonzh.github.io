@@ -153,5 +153,5 @@ p, li {
 
 .disappear {
     animation-name: disappear;
-    animation-duration: 1s;
+    animation-duration: .5s;
 }

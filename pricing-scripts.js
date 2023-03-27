@@ -61,8 +61,10 @@ function appear(id, appeared) {
         info.classList.remove('appear');
         info.classList.add('disappear');
         
-        info.style.display = 'hidden';
-        info.style.opacity = '0';
+        setTimeout(() => {
+            info.style.display = 'none';
+            info.style.opacity = '0';
+        }, 350);
     }
     
 }
