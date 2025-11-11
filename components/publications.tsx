@@ -6,7 +6,7 @@ import { publications } from "@/config/publications";
 export const PublicationAccordion = () => {
   return (
     <Accordion variant="splitted">
-      {publications.preprints.map((p) => (
+      {publications.research.map((p) => (
         <AccordionItem
           key={p.name}
           aria-label={p.name}

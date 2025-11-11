@@ -1,9 +1,7 @@
 import { Accordion, AccordionItem } from "@heroui/accordion";
-
-import { Link } from "@heroui/link"
+import { Link } from "@heroui/link";
 
 import { projects } from "@/config/projects";
-
 
 export const ProjectsAccordion = () => {
   return (
