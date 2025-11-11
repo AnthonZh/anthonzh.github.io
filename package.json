@@ -54,5 +54,19 @@
     "tailwind-variants": "3.1.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.6.3"
-  }
+  },
+  "description": "This is a template for creating applications using Next.js 14 (pages directory) and HeroUI (v2).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonZh/anthonzh.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AnthonZh/anthonzh.github.io/issues"
+  },
+  "homepage": "https://github.com/AnthonZh/anthonzh.github.io#readme"
 }
