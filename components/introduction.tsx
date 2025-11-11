@@ -1,3 +1,5 @@
+import { Image } from "@heroui/image";
+
 import { title, subtitle } from "@/components/primitives";
 
 export const Intro = () => {
@@ -8,6 +10,12 @@ export const Intro = () => {
       <span className={subtitle()}>
         Duke University, Pratt School of Engineering
       </span>
+      <Image
+        alt="Picture of Anthony"
+        src="/anthonyformal.jpg"
+        width={400}
+        height={400}
+      />
     </div>
   );
 };
