@@ -2,10 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "/nextjs-github-pages",
+  basePath: "",
   images: {
     unoptimized: true,
   },
 }
 
-module.exports = nextConfig
+export default nextConfig; // <-- ESM export
