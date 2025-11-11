@@ -1,12 +1,12 @@
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Link } from "@heroui/link";
 
-import { projects } from "@/config/projects";
+import { publications } from "@/config/publications";
 
-export const ProjectsAccordion = () => {
+export const PublicationAccordion = () => {
   return (
     <Accordion variant="splitted">
-      {projects.projects.map((p) => (
+      {publications.research.map((p) => (
         <AccordionItem
           key={p.name}
           aria-label={p.name}
@@ -15,18 +15,16 @@ export const ProjectsAccordion = () => {
         >
           <p className="text-default-700 text-justify">{p.description}</p>
           <br />
-          {p.learnmore?.trim() ? (
-            <p className="text-default-600">
-              <Link
-                isExternal
-                href={p.learnmore}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Learn more
-              </Link>
+          <Link
+            isExternal
+            href={p.link}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <p className="text-default-700 pl-8 -indent-8 text-justify">
+              {p.citation}
             </p>
-          ) : null}
+          </Link>
         </AccordionItem>
       ))}
     </Accordion>
