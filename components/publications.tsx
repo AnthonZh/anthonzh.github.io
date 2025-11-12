@@ -5,7 +5,21 @@ import { publications } from "@/config/publications";
 
 export const PublicationAccordion = () => {
   return (
-    <Accordion variant="splitted">
+    <Accordion
+      itemClasses={{
+        trigger: "cursor-pointer",
+        content: "cursor-auto",
+        title: [
+          "underline underline-offset-4 decoration-1 font-extrabold text-blue-500",
+          "decoration-transparent",
+          "transition-[text-decoration-color] duration-300 ease-in-out",
+          "hover:decoration-current focus-visible:decoration-current",
+        ].join(" "),
+        subtitle: "font-bold",
+      }}
+      selectionMode="multiple"
+      variant="bordered"
+    >
       {publications.research.map((p) => (
         <AccordionItem
           key={p.name}
@@ -13,18 +27,28 @@ export const PublicationAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 text-justify">{p.description}</p>
+          <p className="text-default-700 text-justify cursor-text select-text">
+            {p.description}
+          </p>
           <br />
-          <Link
-            isExternal
-            href={p.link}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <p className="text-default-700 pl-8 -indent-8 text-justify">
+          <p className="text-default-700 pl-8 -indent-4 text-justify">
+            <Link
+              isExternal
+              className={[
+                "text-default-700 hover:text-default-800 visited:text-default-700",
+                "underline underline-offset-4 decoration-1",
+                "decoration-transparent",
+                "transition-[text-decoration-color] duration-300 ease-in-out",
+                "hover:decoration-current focus-visible:decoration-current",
+              ].join(" ")}
+              color="foreground"
+              href={p.link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {p.citation}
-            </p>
-          </Link>
+            </Link>
+          </p>
         </AccordionItem>
       ))}
     </Accordion>
