@@ -30,8 +30,7 @@ export const projects = {
       transforms for the primary denoising function and orthogonal regressions in order to estimate poses and
       normal angles of objects found in the view of a Ping360 Sonar sensor.`,
       time: "September 2025-Present",
-      learnmore:
-        "https://github.com/DukeRobotics/robosub-ros2/tree/sonar-processing",
+      learnmore: "",
     },
   ],
   engineering: [
