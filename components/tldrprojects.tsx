@@ -27,12 +27,12 @@ export const CSProjectsAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 text-justify cursor-text select-text">
+          <p className="text-default-700 cursor-text select-text">
             {p.description}
           </p>
           <br />
           {p.learnmore?.trim() ? (
-            <p className="text-default-700 pl-8 -indent-4 text-justify">
+            <p className="text-default-700 pl-8 -indent-4">
               <Link
                 isExternal
                 className={[
@@ -81,12 +81,12 @@ export const EngineeringProjectsAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 text-justify cursor-text select-text">
+          <p className="text-default-700 cursor-text select-text">
             {p.description}
           </p>
           <br />
           {p.learnmore?.trim() ? (
-            <p className="text-default-700 pl-8 -indent-4 text-justify">
+            <p className="text-default-700 pl-8 -indent-4">
               <Link
                 isExternal
                 className={[

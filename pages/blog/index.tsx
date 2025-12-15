@@ -9,6 +9,11 @@ export default function DocsPage() {
           <h1 className={title()}>Blog</h1>
         </div>
       </section>
+      <p>
+        Welcome to my blog! Here I will post about things that I find fun or
+        that I may like, and more technical details about my projects can be
+        found in my homepage!
+      </p>
     </DefaultLayout>
   );
 }
