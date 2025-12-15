@@ -1,11 +1,12 @@
+// components/Slideshow.tsx
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Props = {
-  images: string[];
-  interval?: number;
+  images: string[]; // e.g. ['/cavaliers/1.jpg', ...]
+  interval?: number; // ms between auto-advances (default 4000)
 };
 
 export default function Slideshow({ images, interval = 4000 }: Props) {
@@ -20,6 +21,7 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
   function clearTimer() {
     if (timerRef.current !== null) {
       window.clearInterval(timerRef.current);
+      window.clearTimeout(timerRef.current);
       timerRef.current = null;
     }
   }
@@ -29,7 +31,7 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
     if (!isPaused && count > 0) {
       timerRef.current = window.setInterval(() => {
         setIndex((i) => (i + 1) % count);
-      }, interval);
+      }, interval) as unknown as number;
     }
   }
 
@@ -40,7 +42,8 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
   }, [count, interval, isPaused]);
 
   function goTo(i: number) {
-    const next = ((i % count) + count) % count; // normalize
+    if (count === 0) return;
+    const next = ((i % count) + count) % count;
 
     setIndex(next);
     clearTimer();
@@ -49,6 +52,42 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
       timerRef.current = null;
       startTimer();
     }, 50) as unknown as number;
+  }
+
+  function prev() {
+    goTo(index - 1);
+  }
+
+  function next() {
+    goTo(index + 1);
+  }
+
+  // handle click or touch on the image area:
+  // clicking left half -> prev(), right half -> next()
+  function handlePointerNavigate(
+    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
+  ) {
+    if (count === 0) return;
+
+    let clientX: number | null = null;
+
+    if ("touches" in e) {
+      if (e.touches && e.touches.length > 0) clientX = e.touches[0].clientX;
+    } else {
+      clientX = (e as React.MouseEvent).clientX;
+    }
+
+    if (clientX == null) {
+      next();
+
+      return;
+    }
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const mid = rect.left + rect.width / 2;
+
+    if (clientX < mid) prev();
+    else next();
   }
 
   if (count === 0) {
@@ -67,8 +106,20 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Image area */}
-      <div className="relative h-64 md:h-[520px] overflow-hidden rounded-2xl shadow-lg bg-black/10">
+      {/* Image area - clickable / tappable halves */}
+      <div
+        aria-label="Slideshow. Click left or right half to navigate."
+        className="relative h-64 md:h-[520px] overflow-hidden rounded-2xl shadow-lg bg-black/10 cursor-pointer"
+        role="button"
+        tabIndex={0}
+        onClick={(e) => handlePointerNavigate(e)}
+        onKeyDown={(e) => {
+          // keep keyboard accessibility: left/right arrows still work
+          if (e.key === "ArrowLeft") prev();
+          if (e.key === "ArrowRight") next();
+        }}
+        onTouchStart={(e) => handlePointerNavigate(e)}
+      >
         {images.map((src, i) => (
           <div
             key={src}
@@ -87,6 +138,12 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
             />
           </div>
         ))}
+
+        {/* Optional: subtle hover hint (purely visual) */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity">
+          <div className="w-1/2 h-full" />
+          <div className="w-1/2 h-full" />
+        </div>
       </div>
 
       {/* Dots */}
