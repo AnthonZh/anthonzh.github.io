@@ -13,7 +13,7 @@ export const Intro = () => {
           alt="Picture of Anthony"
           height={400}
           sizes="(max-width: 640px) 100vw, 400px"
-          src="/anthonyformal.jpg"
+          src="/anthonyformal.png"
           style={{ width: "100%", height: "auto", display: "block" }} // responsive
           width={400}
         />
