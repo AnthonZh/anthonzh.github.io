@@ -38,9 +38,6 @@ export const CSProjectsAccordion = () => {
                 className={[
                   "text-default-700 hover:text-default-800 visited:text-default-700",
                   "underline underline-offset-4 decoration-1",
-                  "decoration-transparent",
-                  "transition-[text-decoration-color] duration-300 ease-in-out",
-                  "hover:decoration-current focus-visible:decoration-current",
                 ].join(" ")}
                 color="foreground"
                 href={p.learnmore}
