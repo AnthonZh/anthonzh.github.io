@@ -39,6 +39,7 @@ const rows = Array.from({ length: maxLength }, (_, index) => ({
 export const Skills = () => {
   return (
     <div className="w-full max-w-full overflow-x-hidden">
+      <h3 className="text-center text-blue-500 font-bold">Skills</h3>
       <Table
         isCompact
         removeWrapper
