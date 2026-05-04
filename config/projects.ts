@@ -14,22 +14,22 @@ export const projects = {
       learnmore: "https://duke.is/documint",
     },
     {
-      name: "Tag!",
-      description: `A 2-dimensional rendering of the classic game, Tag. Using a specialized game engine, the game handles
-        physics, collisions, controls, and rendering in C# and OpenGL (with OpenTK). Implementing arcade-like controls
-        and networking so that players are able to enjoy Tag across the world (and with one less dimension they are used to).
-        A project inspired by my participation in the Duke Programming, Arts, and Design (DPAD) student organization.`,
-      time: "September 2025-Present",
+      name: "Tag Game Engine",
+      description: `A 2-dimensional rendering of the classic game, Tag. Developed a unique game engine using C# 
+        to support rendering, game logic, collisions, and inputs for this specific use case. Utilized OpenTK 
+        to interface with OpenGL, delivering a fully playable two-player experience with real-time collision 
+        detection and responsive keyboard input handling.`,
+      time: "September 2025-December 2025",
       learnmore: "",
     },
     {
       name: "Sonar Processing for Duke Robotics Club",
       description: `A ROS2 sonar node for an underwater robot to allow for estimation of robot pose and normal
       angles to detected objects (walls and buoys). Integrating Sonar denoising and object detection into the
-      ROS2 program, and publishing usable data for task-planning and future sensor integration with CV. Uses Fourier
+      ROS2 program, and publishing usable data for task-planning and future sensor integration. Uses Fourier
       transforms for the primary denoising function and orthogonal regressions in order to estimate poses and
       normal angles of objects found in the view of a Ping360 Sonar sensor.`,
-      time: "September 2025-Present",
+      time: "September 2025-April 2026",
       learnmore:
         "https://github.com/DukeRobotics/robosub-ros2/tree/sonar-processing",
     },
@@ -52,7 +52,7 @@ export const projects = {
         windshield wipers, hazard lights, and turn signals. Uses a Teensy 4.1 microcontroller to take inputs from
         a switchboard and output to offboard components. Outputs are controlled using TC4427ACPA Gate Drivers and MOSFETs
         for energy-efficient logic`,
-      time: "September 2025-Present",
+      time: "September 2025-April 2026",
       learnmore: "",
     },
     {
@@ -61,7 +61,7 @@ export const projects = {
         the power usage of the vehicle. Uses a voltage divider to measure voltage and a shunt resistor with an INA299 to measure
         the amperage of the vehicle. Mixed-signal PCB layoutting considers the interactions between the analog outputs of the
         INA299 and the voltage divider and the digital signals from the CAN Transceiver on the board.`,
-      time: "September 2025-Present",
+      time: "September 2025-January 2026",
       learnmore: "",
     },
   ],
