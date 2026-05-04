@@ -3,24 +3,12 @@ export type Projects = typeof projects;
 export const projects = {
   cs: [
     {
-      name: "DocuMINT",
-      description: `An AI-powered tool to automate work documentation using just a single video. Empowers 
-        organizations and groups to collaborate on projects and keep track of development progress. Developed the
-        Quarkus Backend for this project, handling user authentication, organization handling, and project endpoints.
-        Also developed a file-uploading system using S3 (Amazon Simple Storage Service) and assisted refactoring
-        the AI data processing to the backend. Closely collaborated with the front-end developer. Developed for
-        the 2025 Duke AI Hackathon.`,
-      time: "November 2025",
-      learnmore: "https://duke.is/documint",
-    },
-    {
-      name: "Tag Game Engine",
-      description: `A 2-dimensional rendering of the classic game, Tag. Developed a unique game engine using C# 
-        to support rendering, game logic, collisions, and inputs for this specific use case. Utilized OpenTK 
-        to interface with OpenGL, delivering a fully playable two-player experience with real-time collision 
-        detection and responsive keyboard input handling.`,
-      time: "September 2025-December 2025",
-      learnmore: "",
+      name: "CAN Library Wrapper for Duke Electric Vehicles",
+      description: `A CAN Library made for intra-vehicular communication between MCUs in a custom-made Electric 
+      Vehicle. Developed the library to enable minimal effort for implementation in each MCU's firmware, and enabled 
+      usage on both the ESP32 and Teensy 4.1 Microcontrollers, reducing integration time for new subsystems and 
+      ensuring reliable, real-time data exchange across the vehicle's electrical architecture.`,
+      time: "March 2026-April 2026"
     },
     {
       name: "Sonar Processing for Duke Robotics Club",
@@ -33,18 +21,28 @@ export const projects = {
       learnmore:
         "https://github.com/DukeRobotics/robosub-ros2/tree/sonar-processing",
     },
-  ],
-  engineering: [
     {
-      name: "Hands-Free Measuring Device for Wheelchair Users",
-      description: `A device to measure the distance traveled while in a wheelchair for Duke's EGR 101. Designed for Chris Sparrow, 
-        Director of Physical Accessibility at Duke, in order to improve accessibility in the University and assist in path
-        planning. Using a BNO085 IMU and ESP32 
-        microcontroller, the user can remotely interact with the device and get measurements accurate within the inch. I developed the circuit
-        design for this project, and wrote the C++ program for the ESP32 to handle BNO085 data.`,
+      name: "Tag Game Engine",
+      description: `A 2-dimensional rendering of the classic game, Tag. Developed a unique game engine using C# 
+        to support rendering, game logic, collisions, and inputs for this specific use case. Utilized OpenTK 
+        to interface with OpenGL, delivering a fully playable two-player experience with real-time collision 
+        detection and responsive keyboard input handling.`,
       time: "September 2025-December 2025",
       learnmore: "",
     },
+    {
+      name: "DocuMINT",
+      description: `An AI-powered tool to automate work documentation using just a single video. Empowers 
+        organizations and groups to collaborate on projects and keep track of development progress. Developed the
+        Quarkus Backend for this project, handling user authentication, organization handling, and project endpoints.
+        Also developed a file-uploading system using S3 (Amazon Simple Storage Service) and assisted refactoring
+        the AI data processing to the backend. Closely collaborated with the front-end developer. Developed for
+        the 2025 Duke AI Hackathon.`,
+      time: "November 2025",
+      learnmore: "https://duke.is/documint",
+    },
+  ],
+  engineering: [
     {
       name: "Peripherals Board for Duke Electric Vehicles",
       description: `A Printed Circuit Board to control a from-scratch electric vehicle for the Shell Eco-Marathon. 
@@ -62,6 +60,16 @@ export const projects = {
         the amperage of the vehicle. Mixed-signal PCB layoutting considers the interactions between the analog outputs of the
         INA299 and the voltage divider and the digital signals from the CAN Transceiver on the board.`,
       time: "September 2025-January 2026",
+      learnmore: "",
+    },
+    {
+      name: "Hands-Free Measuring Device for Wheelchair Users",
+      description: `A device to measure the distance traveled while in a wheelchair for Duke's EGR 101. Designed for Chris Sparrow, 
+        Director of Physical Accessibility at Duke, in order to improve accessibility in the University and assist in path
+        planning. Using a BNO085 IMU and ESP32 
+        microcontroller, the user can remotely interact with the device and get measurements accurate within the inch. I developed the circuit
+        design for this project, and wrote the C++ program for the ESP32 to handle BNO085 data.`,
+      time: "September 2025-December 2025",
       learnmore: "",
     },
   ],
