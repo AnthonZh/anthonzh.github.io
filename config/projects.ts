@@ -4,40 +4,34 @@ export const projects = {
   cs: [
     {
       name: "CAN Library Wrapper for Duke Electric Vehicles",
-      description: `A CAN Library made for intra-vehicular communication between MCUs in a custom-made Electric 
-      Vehicle. Developed the library to enable minimal effort for implementation in each MCU's firmware, and enabled 
-      usage on both the ESP32 and Teensy 4.1 Microcontrollers, reducing integration time for new subsystems and 
-      ensuring reliable, real-time data exchange across the vehicle's electrical architecture.`,
-      time: "March 2026-April 2026"
+      description: `Built a C++ CAN library for communication between microcontrollers in Duke Electric Vehicles'
+      custom electric vehicle. Designed a common interface for the ESP32 and Teensy 4.1, reducing the work required
+      to add new subsystems while maintaining board-to-board communication latency below 100 ms.`,
+      time: "March 2026-April 2026",
     },
     {
       name: "Sonar Processing for Duke Robotics Club",
-      description: `A ROS2 sonar node for an underwater robot to allow for estimation of robot pose and normal
-      angles to detected objects (walls and buoys). Integrating Sonar denoising and object detection into the
-      ROS2 program, and publishing usable data for task-planning and future sensor integration. Uses Fourier
-      transforms for the primary denoising function and orthogonal regressions in order to estimate poses and
-      normal angles of objects found in the view of a Ping360 Sonar sensor.`,
+      description: `Engineered a ROS2 denoising and segmentation pipeline for a Ping360 sonar on Duke Robotics
+      Club's autonomous underwater robot. Used Fourier transforms and orthogonal regression to estimate the pose
+      and surface normals of walls and buoys, aligning the robot to walls 10 meters away in six out of six tests.`,
       time: "September 2025-April 2026",
       learnmore:
         "https://github.com/DukeRobotics/robosub-ros2/tree/sonar-processing",
     },
     {
       name: "Tag Game Engine",
-      description: `A 2-dimensional rendering of the classic game, Tag. Developed a unique game engine using C# 
-        to support rendering, game logic, collisions, and inputs for this specific use case. Utilized OpenTK 
-        to interface with OpenGL, delivering a fully playable two-player experience with real-time collision 
-        detection and responsive keyboard input handling.`,
+      description: `Built a custom two-dimensional game engine in C# and .NET for a playable game of tag. Used
+        QuadTrees to optimize movement and collision processing, then built player-specific cameras and an OpenGL
+        rendering pipeline with customizable shaders.`,
       time: "September 2025-December 2025",
       learnmore: "",
     },
     {
       name: "DocuMINT",
-      description: `An AI-powered tool to automate work documentation using just a single video. Empowers 
-        organizations and groups to collaborate on projects and keep track of development progress. Developed the
-        Quarkus Backend for this project, handling user authentication, organization handling, and project endpoints.
-        Also developed a file-uploading system using S3 (Amazon Simple Storage Service) and assisted refactoring
-        the AI data processing to the backend. Closely collaborated with the front-end developer. Developed for
-        the 2025 Duke AI Hackathon.`,
+      description: `Developed the backend for a 2025 Duke AI Hackathon project that turned short videos into
+        detailed documentation with an LLM. Built authentication, organization, project, and information-storage
+        endpoints in Quarkus; added secure password hashing and salting; and implemented video uploads with Amazon
+        S3. The application could produce documentation from less than 30 seconds of video.`,
       time: "November 2025",
       learnmore: "https://duke.is/documint",
     },
@@ -45,30 +39,28 @@ export const projects = {
   engineering: [
     {
       name: "Peripherals Board for Duke Electric Vehicles",
-      description: `A Printed Circuit Board to control a from-scratch electric vehicle for the Shell Eco-Marathon. 
-        Using Altium Designer, designed a board which can control peripheral elements on the car, including
-        windshield wipers, hazard lights, and turn signals. Uses a Teensy 4.1 microcontroller to take inputs from
-        a switchboard and output to offboard components. Outputs are controlled using TC4427ACPA Gate Drivers and MOSFETs
-        for energy-efficient logic`,
+      description: `Designed a low-power printed circuit board in Altium Designer for Duke Electric Vehicles'
+        Shell Eco-marathon car. The Teensy 4.1-based board integrated sensor and control circuitry for more than five
+        vehicle functions, including windshield wipers, hazard lights, and turn signals. TC4427A gate drivers and
+        MOSFETs controlled the off-board loads.`,
       time: "September 2025-April 2026",
       learnmore: "",
     },
     {
       name: "Joulemeter Board for Duke Electric Vehicles",
-      description: `A Printed Circuit Board to measure the voltage and current of the electric vehicle in order to calculate the
-        the power usage of the vehicle. Uses a voltage divider to measure voltage and a shunt resistor with an INA299 to measure
-        the amperage of the vehicle. Mixed-signal PCB layoutting considers the interactions between the analog outputs of the
-        INA299 and the voltage divider and the digital signals from the CAN Transceiver on the board.`,
+      description: `Designed a mixed-signal printed circuit board that measured the electric vehicle's voltage and
+        current to calculate energy use. Used a voltage divider for voltage sensing and a shunt resistor with an
+        INA299 power monitor for current sensing. Routed the analog measurement circuitry to limit interference from
+        the board's digital CAN signals.`,
       time: "September 2025-January 2026",
       learnmore: "",
     },
     {
       name: "Hands-Free Measuring Device for Wheelchair Users",
-      description: `A device to measure the distance traveled while in a wheelchair for Duke's EGR 101. Designed for Chris Sparrow, 
-        Director of Physical Accessibility at Duke, in order to improve accessibility in the University and assist in path
-        planning. Using a BNO085 IMU and ESP32 
-        microcontroller, the user can remotely interact with the device and get measurements accurate within the inch. I developed the circuit
-        design for this project, and wrote the C++ program for the ESP32 to handle BNO085 data.`,
+      description: `Developed a hands-free device for Duke's EGR 101 that measured the distance traveled by a
+        wheelchair with less than one percent error over distances greater than 125 meters. Designed the circuit and
+        wrote the ESP32 firmware in C++ to process BNO085 IMU data. The team built the device for Duke accessibility
+        staff to support campus route planning.`,
       time: "September 2025-December 2025",
       learnmore: "",
     },

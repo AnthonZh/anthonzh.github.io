@@ -7,6 +7,7 @@ import {
 } from "@/components/tldrprojects";
 import { Skills } from "@/components/skills";
 import { PublicationAccordion } from "@/components/publications";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 
 export default function IndexPage() {
   return (
@@ -45,6 +46,17 @@ export default function IndexPage() {
             </div>
           </section>
         </section>
+      </section>
+      <section
+        aria-labelledby="experience-heading"
+        className="flex flex-col items-center justify-center gap-3 py-10 md:py-16"
+      >
+        <div className="w-full max-w-6xl text-center md:text-left">
+          <h2 className={subtitle()} id="experience-heading">
+            Experience
+          </h2>
+        </div>
+        <ExperienceTimeline />
       </section>
     </DefaultLayout>
   );
