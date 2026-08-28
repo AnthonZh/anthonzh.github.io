@@ -101,8 +101,8 @@ const MonthGrid = ({ months }: { months: ExperienceMonth[] }) => (
         key={`${month.year}-${month.month}`}
         className={
           month.month === 1
-            ? "border-l border-default-300"
-            : "border-l border-default-100"
+            ? "border-l border-[var(--study-strong-rule)]"
+            : "border-l border-[var(--study-rule)]"
         }
       />
     ))}
@@ -128,17 +128,17 @@ const ExperienceBar = ({
       }}
     >
       <div className="min-w-0">
-        <p className="truncate text-base font-bold text-foreground">
+        <p className="truncate font-display text-lg text-[var(--study-ink)]">
           {item.role}
         </p>
-        <p className="truncate text-sm font-semibold text-blue-600 dark:text-blue-400">
+        <p className="truncate text-sm font-medium text-[var(--study-copper-soft)]">
           {item.organization}
         </p>
-        <p className="mt-0.5 text-xs text-default-500">
+        <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.08em] text-[var(--study-faint)]">
           {formatRange(item)} · {item.location}
         </p>
         {transition ? (
-          <p className="mt-1 text-[11px] leading-tight text-default-600">
+          <p className="mt-2 text-[11px] leading-tight text-[var(--study-muted)]">
             {transition}
           </p>
         ) : null}
@@ -162,42 +162,34 @@ const ExperienceBar = ({
           const color =
             item.phases.length > 1
               ? isFirst
-                ? "bg-blue-300 dark:bg-blue-700"
-                : "bg-blue-600 dark:bg-blue-400"
+                ? "bg-[var(--study-slate)]"
+                : "bg-[var(--study-copper)]"
               : isCurrent
-                ? "bg-blue-600 dark:bg-blue-400"
-                : "bg-blue-500 dark:bg-blue-400";
-          const rounding =
-            item.phases.length === 1
-              ? "rounded-full"
-              : isFirst
-                ? "rounded-l-full"
-                : isLast
-                  ? "rounded-r-full"
-                  : "";
+                ? "bg-[var(--study-copper)]"
+                : "bg-[var(--study-slate)]";
 
           return (
             <div
               key={`${phase.label}-${formatDate(phase.start)}`}
               aria-hidden="true"
-              className={`relative z-10 h-1 ${color} ${rounding}`}
+              className={`relative z-10 h-0.5 ${color}`}
               style={{
                 gridColumn: `${startColumn + 1} / span ${duration}`,
                 gridRow: 1,
               }}
             >
               {isFirst ? (
-                <span className="absolute -left-1 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-inherit" />
+                <span className="absolute -left-0.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 bg-inherit" />
               ) : null}
               {!isFirst ? (
-                <span className="absolute -left-1 top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 border border-background bg-blue-600 dark:bg-blue-400" />
+                <span className="absolute -left-1 top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 border border-[var(--study-bg)] bg-[var(--study-copper)]" />
               ) : null}
               {isLast ? (
-                <span className="absolute -right-1 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-inherit" />
+                <span className="absolute -right-0.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 bg-inherit" />
               ) : null}
               {isCurrent ? (
-                <span className="absolute -top-5 right-0 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-current" />
+                <span className="absolute -top-6 right-0 inline-flex items-center gap-1.5 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-[var(--study-copper-soft)]">
+                  <span className="h-1.5 w-1.5 bg-current" />
                   <span>Present</span>
                 </span>
               ) : null}
@@ -242,7 +234,7 @@ export const ExperienceTimeline = () => {
   return (
     <div
       aria-label="Experience by month. Scroll horizontally to see all dates."
-      className="w-full max-w-6xl overflow-x-auto"
+      className="w-full overflow-x-auto pb-3"
       role="region"
     >
       <div className="mx-auto w-max min-w-[960px]">
@@ -250,7 +242,7 @@ export const ExperienceTimeline = () => {
           className="grid gap-4 px-4 pb-2"
           style={{ gridTemplateColumns: contentGrid }}
         >
-          <span className="self-end text-sm font-medium text-default-500">
+          <span className="study-kicker self-end text-[var(--study-faint)]">
             Role
           </span>
           <div>
@@ -258,7 +250,7 @@ export const ExperienceTimeline = () => {
               {timelineYears.map((year) => (
                 <span
                   key={year.year}
-                  className="border-l border-default-300 pl-2 text-xs font-semibold text-default-600"
+                  className="border-l border-[var(--study-strong-rule)] pl-2 font-mono text-[0.65rem] font-medium tracking-[0.08em] text-[var(--study-muted)]"
                   style={{ gridColumn: `span ${year.count}` }}
                 >
                   {year.year}
@@ -278,7 +270,7 @@ export const ExperienceTimeline = () => {
                 return (
                   <span
                     key={`${month.year}-${month.month}`}
-                    className="border-l border-default-100 pl-1 text-[10px] text-default-400"
+                    className="border-l border-[var(--study-rule)] pl-1 font-mono text-[9px] uppercase text-[var(--study-faint)]"
                   >
                     {showLabel ? monthNames[month.month - 1] : null}
                   </span>
@@ -290,11 +282,12 @@ export const ExperienceTimeline = () => {
 
         <Accordion
           itemClasses={{
-            base: "border-b border-default-200 last:border-b-0",
+            base: "border-b border-[var(--study-rule)] last:border-b-0",
             content: "px-4 pb-5",
             title: "w-full",
             trigger:
-              "cursor-pointer px-4 py-3 data-[hover=true]:bg-default-100",
+              "group cursor-pointer px-4 py-4 data-[hover=true]:bg-transparent",
+            indicator: "text-[var(--study-copper)]",
           }}
           selectionMode="multiple"
           variant="light"
@@ -316,7 +309,7 @@ export const ExperienceTimeline = () => {
                 style={{ gridTemplateColumns: contentGrid }}
               >
                 <span aria-hidden="true" />
-                <p className="max-w-3xl border-l-2 border-default-200 pl-4 text-sm leading-7 text-default-700">
+                <p className="max-w-3xl border-l border-[var(--study-copper)] pl-4 text-sm leading-7 text-[var(--study-muted)]">
                   {item.summary}
                 </p>
               </div>
