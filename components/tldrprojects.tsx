@@ -7,18 +7,17 @@ export const CSProjectsAccordion = () => {
   return (
     <Accordion
       itemClasses={{
-        trigger: "cursor-pointer",
-        content: "cursor-auto",
-        title: [
-          "underline underline-offset-4 decoration-1 font-extrabold text-blue-500",
-          "decoration-transparent",
-          "transition-[text-decoration-color] duration-300 ease-in-out",
-          "hover:decoration-current focus-visible:decoration-current",
-        ].join(" "),
-        subtitle: "font-bold",
+        base: "border-b border-[var(--study-rule)] last:border-b-0",
+        content: "cursor-auto px-0 pb-6",
+        indicator: "text-[var(--study-copper)]",
+        subtitle:
+          "mt-1 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--study-faint)]",
+        title:
+          "font-display text-xl leading-snug text-[var(--study-ink)] transition-colors group-data-[hover=true]:text-[var(--study-copper-soft)]",
+        trigger: "group cursor-pointer px-0 py-5",
       }}
       selectionMode="multiple"
-      variant="bordered"
+      variant="light"
     >
       {projects.cs.map((p) => (
         <AccordionItem
@@ -27,24 +26,19 @@ export const CSProjectsAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 cursor-text select-text">
+          <p className="max-w-2xl cursor-text select-text text-sm leading-7 text-[var(--study-muted)]">
             {p.description}
           </p>
-          <br />
           {p.learnmore?.trim() ? (
-            <p className="text-default-700 pl-8 -indent-4">
+            <p className="mt-4">
               <Link
                 isExternal
-                className={[
-                  "text-default-700 hover:text-default-800 visited:text-default-700",
-                  "underline underline-offset-4 decoration-1",
-                ].join(" ")}
-                color="foreground"
+                className="study-link font-mono text-[0.68rem] uppercase tracking-[0.12em]"
                 href={p.learnmore}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Learn More
+                View project ↗
               </Link>
             </p>
           ) : null}
@@ -58,18 +52,17 @@ export const EngineeringProjectsAccordion = () => {
   return (
     <Accordion
       itemClasses={{
-        trigger: "cursor-pointer",
-        content: "cursor-auto",
-        title: [
-          "underline underline-offset-4 decoration-1 font-extrabold text-blue-500",
-          "decoration-transparent",
-          "transition-[text-decoration-color] duration-300 ease-in-out",
-          "hover:decoration-current focus-visible:decoration-current",
-        ].join(" "),
-        subtitle: "font-bold",
+        base: "border-b border-[var(--study-rule)] last:border-b-0",
+        content: "cursor-auto px-0 pb-6",
+        indicator: "text-[var(--study-copper)]",
+        subtitle:
+          "mt-1 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--study-faint)]",
+        title:
+          "font-display text-xl leading-snug text-[var(--study-ink)] transition-colors group-data-[hover=true]:text-[var(--study-copper-soft)]",
+        trigger: "group cursor-pointer px-0 py-5",
       }}
       selectionMode="multiple"
-      variant="bordered"
+      variant="light"
     >
       {projects.engineering.map((p) => (
         <AccordionItem
@@ -78,27 +71,19 @@ export const EngineeringProjectsAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 cursor-text select-text">
+          <p className="max-w-2xl cursor-text select-text text-sm leading-7 text-[var(--study-muted)]">
             {p.description}
           </p>
-          <br />
           {p.learnmore?.trim() ? (
-            <p className="text-default-700 pl-8 -indent-4">
+            <p className="mt-4">
               <Link
                 isExternal
-                className={[
-                  "text-default-700 hover:text-default-800 visited:text-default-700",
-                  "underline underline-offset-4 decoration-1",
-                  "decoration-transparent",
-                  "transition-[text-decoration-color] duration-300 ease-in-out",
-                  "hover:decoration-current focus-visible:decoration-current",
-                ].join(" ")}
-                color="foreground"
+                className="study-link font-mono text-[0.68rem] uppercase tracking-[0.12em]"
                 href={p.learnmore}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Learn More
+                View project ↗
               </Link>
             </p>
           ) : null}
