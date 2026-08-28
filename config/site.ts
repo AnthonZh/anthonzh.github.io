@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Anthony Zhang",
-  description: "Portfolio Website for Anthony Zhang",
+  description:
+    "Anthony Zhang is an ECE and CS student at Duke University interested in machine learning, robotics, and embedded systems.",
   navItems: [
     {
       label: "Home",

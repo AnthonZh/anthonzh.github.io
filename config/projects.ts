@@ -16,7 +16,15 @@ export const projects = {
       and surface normals of walls and buoys, aligning the robot to walls 10 meters away in six out of six tests.`,
       time: "September 2025-April 2026",
       learnmore:
-        "https://github.com/DukeRobotics/robosub-ros2/tree/sonar-processing",
+        "https://github.com/DukeRobotics/robosub-ros2/tree/main/onboard/src/sonar",
+    },
+    {
+      name: "LockCube for HackDuke 2026",
+      description: `Built a short Unity game for LockCube that gave users a break from doomscrolling before they
+        returned to work. Deployed the x86_64 Unity build to a Raspberry Pi with Box64, working around Unity's lack
+        of native ARM support.`,
+      time: "March 2026",
+      learnmore: "https://devpost.com/software/lockduke",
     },
     {
       name: "Tag Game Engine",

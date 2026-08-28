@@ -7,27 +7,46 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
+import { useRouter } from "next/router";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export const Navbar = () => {
+  const router = useRouter();
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
+    <HeroUINavbar
+      classNames={{
+        base: "border-b border-[var(--study-rule)] bg-[color:rgba(16,15,13,0.92)]",
+        wrapper: "max-w-[var(--study-max)] px-5 sm:px-8",
+        menu: "border-t border-[var(--study-rule)] bg-[var(--study-bg)] px-5 pt-8",
+      }}
+      maxWidth="full"
+      position="sticky"
+    >
+      <NavbarContent className="basis-full" justify="start">
+        <NextLink
+          aria-label="Anthony Zhang, home"
+          className="group flex items-baseline gap-3"
+          href="/"
+        >
+          <span className="font-display text-xl text-[var(--study-ink)] transition-colors group-hover:text-[var(--study-copper-soft)]">
+            Anthony Zhang
+          </span>
+          <span className="hidden font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--study-faint)] sm:inline">
+            portfolio
+          </span>
+        </NextLink>
+        <div className="ml-10 hidden items-center gap-6 md:flex">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
+                aria-current={
+                  router.pathname === item.href ? "page" : undefined
+                }
+                className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[var(--study-muted)] transition-colors hover:text-[var(--study-copper-soft)] aria-[current=page]:text-[var(--study-copper)]"
                 href={item.href}
               >
                 {item.label}
@@ -37,41 +56,62 @@ export const Navbar = () => {
         </div>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
+      <NavbarContent className="hidden basis-full sm:flex" justify="end">
+        <NavbarItem className="hidden items-center gap-4 sm:flex">
+          <Link
+            isExternal
+            aria-label="GitHub"
+            className="text-[var(--study-muted)] hover:text-[var(--study-copper-soft)]"
+            href={siteConfig.links.github}
+          >
+            <GithubIcon size={19} />
           </Link>
-          <Link isExternal href={siteConfig.links.linkedin} title="LinkedIn">
-            <LinkedinIcon className="text-default-500" />
+          <Link
+            isExternal
+            aria-label="LinkedIn"
+            className="text-[var(--study-muted)] hover:text-[var(--study-copper-soft)]"
+            href={siteConfig.links.linkedin}
+          >
+            <LinkedinIcon size={19} />
           </Link>
-          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <Link isExternal href={siteConfig.links.linkedin} title="LinkedIn">
-          <LinkedinIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
+      <NavbarContent className="basis-1 pl-4 md:hidden" justify="end">
+        <NavbarMenuToggle className="text-[var(--study-ink)]" />
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link color={"foreground"} href={item.href} size="lg">
+        <div className="flex flex-col gap-1">
+          {siteConfig.navMenuItems.map((item) => (
+            <NavbarMenuItem
+              key={item.href}
+              className="border-b border-[var(--study-rule)] py-4"
+            >
+              <Link
+                className="font-display text-3xl text-[var(--study-ink)]"
+                href={item.href}
+              >
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
+          <div className="mt-6 flex gap-5">
+            <Link
+              isExternal
+              className="study-link text-sm"
+              href={siteConfig.links.github}
+            >
+              GitHub
+            </Link>
+            <Link
+              isExternal
+              className="study-link text-sm"
+              href={siteConfig.links.linkedin}
+            >
+              LinkedIn
+            </Link>
+          </div>
         </div>
       </NavbarMenu>
     </HeroUINavbar>

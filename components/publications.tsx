@@ -7,18 +7,17 @@ export const PublicationAccordion = () => {
   return (
     <Accordion
       itemClasses={{
-        trigger: "cursor-pointer",
-        content: "cursor-auto",
-        title: [
-          "underline underline-offset-4 decoration-1 font-extrabold text-blue-500",
-          "decoration-transparent",
-          "transition-[text-decoration-color] duration-300 ease-in-out",
-          "hover:decoration-current focus-visible:decoration-current",
-        ].join(" "),
-        subtitle: "font-bold",
+        base: "border-b border-[var(--study-rule)] last:border-b-0",
+        content: "cursor-auto px-0 pb-8 md:pl-32",
+        indicator: "text-[var(--study-copper)]",
+        subtitle:
+          "mt-1 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--study-faint)]",
+        title:
+          "max-w-4xl font-display text-2xl leading-snug text-[var(--study-ink)] transition-colors group-data-[hover=true]:text-[var(--study-copper-soft)] md:text-3xl",
+        trigger: "group cursor-pointer px-0 py-6",
       }}
       selectionMode="multiple"
-      variant="bordered"
+      variant="light"
     >
       {publications.research.map((p) => (
         <AccordionItem
@@ -27,21 +26,13 @@ export const PublicationAccordion = () => {
           subtitle={p.time}
           title={p.name}
         >
-          <p className="text-default-700 cursor-text select-text">
+          <p className="cursor-text select-text text-sm leading-7 text-[var(--study-muted)]">
             {p.description}
           </p>
-          <br />
-          <p className="text-default-700 pl-8 -indent-4">
+          <p className="mt-5 max-w-3xl border-l border-[var(--study-copper)] pl-4 text-xs leading-6 text-[var(--study-faint)]">
             <Link
               isExternal
-              className={[
-                "text-default-700 hover:text-default-800 visited:text-default-700",
-                "underline underline-offset-4 decoration-1",
-                "decoration-transparent",
-                "transition-[text-decoration-color] duration-300 ease-in-out",
-                "hover:decoration-current focus-visible:decoration-current",
-              ].join(" ")}
-              color="foreground"
+              className="text-inherit underline decoration-[var(--study-strong-rule)] underline-offset-4 transition-colors hover:text-[var(--study-copper-soft)]"
               href={p.link}
               rel="noopener noreferrer"
               target="_blank"

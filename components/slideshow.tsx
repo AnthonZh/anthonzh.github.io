@@ -1,19 +1,17 @@
-// components/Slideshow.tsx
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Props = {
-  images: string[]; // e.g. ['/cavaliers/1.jpg', ...]
-  interval?: number; // ms between auto-advances (default 4000)
+  images: string[];
+  interval?: number;
 };
 
 export default function Slideshow({ images, interval = 4000 }: Props) {
   const [index, setIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  // In browsers setInterval returns a number; use number | null for the ref
   const timerRef = useRef<number | null>(null);
 
   const count = images.length;
@@ -62,8 +60,6 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
     goTo(index + 1);
   }
 
-  // handle click or touch on the image area:
-  // clicking left half -> prev(), right half -> next()
   function handlePointerNavigate(
     e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
   ) {
@@ -100,21 +96,19 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
 
   return (
     <div
-      className="w-full max-w-4xl mx-auto"
+      className="mx-auto w-full"
       onBlur={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Image area - clickable / tappable halves */}
       <div
         aria-label="Slideshow. Click left or right half to navigate."
-        className="relative h-64 md:h-[520px] overflow-hidden rounded-2xl shadow-lg bg-black/10 cursor-pointer"
+        className="relative aspect-[16/10] cursor-pointer overflow-hidden border border-[var(--study-strong-rule)] bg-black"
         role="button"
         tabIndex={0}
         onClick={(e) => handlePointerNavigate(e)}
         onKeyDown={(e) => {
-          // keep keyboard accessibility: left/right arrows still work
           if (e.key === "ArrowLeft") prev();
           if (e.key === "ArrowRight") next();
         }}
@@ -139,21 +133,21 @@ export default function Slideshow({ images, interval = 4000 }: Props) {
           </div>
         ))}
 
-        {/* Optional: subtle hover hint (purely visual) */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity">
-          <div className="w-1/2 h-full" />
-          <div className="w-1/2 h-full" />
-        </div>
+        <span className="pointer-events-none absolute bottom-4 right-4 bg-[color:rgba(16,15,13,0.78)] px-2 py-1 font-mono text-[0.62rem] tracking-[0.12em] text-[var(--study-ink)]">
+          {String(index + 1).padStart(2, "0")} /{" "}
+          {String(count).padStart(2, "0")}
+        </span>
       </div>
 
-      {/* Dots */}
-      <div className="flex items-center justify-center gap-3 mt-4">
+      <div aria-label="Choose slide" className="mt-4 flex items-center gap-2">
         {images.map((_, i) => (
           <button
             key={i}
             aria-label={`Go to slide ${i + 1}`}
-            className={`w-3 h-3 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-sky-500 ${
-              i === index ? "bg-green-600 scale-125" : "bg-gray-300"
+            className={`h-0.5 flex-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--study-copper)] ${
+              i === index
+                ? "bg-[var(--study-copper)]"
+                : "bg-[var(--study-strong-rule)] hover:bg-[var(--study-muted)]"
             }`}
             onClick={() => goTo(i)}
           />
