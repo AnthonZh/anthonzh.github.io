@@ -1,0 +1,16 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: Google-Site-Verification
+Allow: /googlede174609db55419c.html
+
+User-agent: *
+Disallow: /
+
+Sitemap: https://anthonzh.github.io/sitemap.xml
